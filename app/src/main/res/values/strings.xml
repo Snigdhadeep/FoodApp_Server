@@ -8,4 +8,6 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_food_listclass">FoodListclass</string>
+    <string name="title_activity_order_status">OrderStatus</string>
+    <string name="title_activity_offers">Offers</string>
 </resources>

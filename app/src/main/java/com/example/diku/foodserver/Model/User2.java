@@ -1,17 +1,16 @@
 package com.example.diku.foodserver.Model;
 
 /**
- * Created by Diku on 23-05-2018.
+ * Created by Diku on 15-06-2018.
  */
 
-public class User {
-
+public class User2 {
     private String name,phone,password,isstaff,email;
 
-    public User() {
+    public User2() {
     }
 
-    public User(String name, String phone, String password, String isstaff, String email) {
+    public User2(String name, String phone, String password, String isstaff, String email) {
         this.name = name;
         this.phone = phone;
         this.password = password;

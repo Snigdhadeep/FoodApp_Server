@@ -4,7 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardElevation="4dp">
+    app:cardElevation="4dp"
+    android:layout_marginBottom="25dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +18,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/et_additemName"
             android:hint="Name"
-            android:textSize="40dp"
+
             android:layout_gravity="center"
             android:gravity="center"/>
         <EditText
@@ -22,15 +26,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/et_additemdescription"
             android:hint="Description"
-            android:textSize="40dp"
+
             android:layout_gravity="center"
             android:gravity="center"/>
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/et_additemPrice"
+            android:inputType="number"
             android:hint="Price"
-            android:textSize="40dp"
             android:layout_gravity="center"
             android:gravity="center"/>
         <EditText
@@ -38,46 +42,49 @@
             android:layout_height="wrap_content"
             android:id="@+id/et_additemDiscount"
             android:hint="Discount"
-            android:textSize="40dp"
+            android:inputType="number"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_additem_unit"
+            android:hint="unit"
+            android:inputType="number"
             android:layout_gravity="center"
             android:gravity="center"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/btn_left"
-                android:text="select"
-                android:layout_alignParentLeft="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"/>
+                <Button
+                    android:id="@+id/btn_left"
+                    android:text="select"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    />
 
-            <Button
-                android:id="@+id/btn_right"
-                android:text="upload"
-                android:layout_gravity="center|right"
-                android:layout_alignParentRight="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"/>
-
-
-
-
-        </RelativeLayout>
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btn_right"
+                    android:text="upload"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"/>
+    </RelativeLayout>
 
     </LinearLayout>
+
+
+    </ScrollView>
+
+
+
 
 
 

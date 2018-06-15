@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -29,9 +30,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.diku.foodserver.AutogridLayoutManeger.AutogridLayoutManeger;
 import com.example.diku.foodserver.Common.Common;
 import com.example.diku.foodserver.Interface.ItemClickListener;
 import com.example.diku.foodserver.Model.Category;
+import com.example.diku.foodserver.Model.Order;
 import com.example.diku.foodserver.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -96,9 +99,13 @@ public class Home extends AppCompatActivity
         txt_fullname.setText(Common.currentUser.getName());
 
         recyclerMenu=(RecyclerView)findViewById(R.id.recycler_menuhome);
-        layoutManager=new LinearLayoutManager(this);
+
+        AutogridLayoutManeger layoutManager = new AutogridLayoutManeger(this, 200);
         recyclerMenu.setHasFixedSize(true);
         recyclerMenu.setLayoutManager(layoutManager);
+        GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
+        recyclerMenu.setLayoutManager(manager);
+
 
         loadmenu();
 
@@ -248,7 +255,7 @@ public class Home extends AppCompatActivity
 
                 && data != null && data.getData() != null
 
-                ){
+                ) {
 
             saveuri=data.getData();
             btn_select.setText("Image selected");
@@ -339,17 +346,25 @@ public class Home extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_offer) {
+            Intent intent=new Intent(getApplicationContext(),Offers.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_cart) {
 
-        } else if (id == R.id.nav_slideshow) {
+          /*  Intent intent=new Intent(this,Cart.class);
+            startActivity(intent);*/
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_orders) {
+            Intent intent=new Intent(getApplicationContext(),OrderStatus.class);
+            startActivity(intent);
 
-        } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_logout) {
+
+            Intent intent=new Intent(this,SigninActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+
 
         }
 
@@ -420,33 +435,33 @@ public class Home extends AppCompatActivity
 
 
         alertdialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+        @Override
+        public void onClick(DialogInterface dialogInterface, int i) {
 
-                dialogInterface.dismiss();
-            }
-        });
+            dialogInterface.dismiss();
+        }
+    });
 
 
         alertdialog.setView(view);
         alertdialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+        @Override
+        public void onClick(DialogInterface dialogInterface, int i) {
 
-                dialogInterface.dismiss();
-               // ref.push().setValue(newcategory);
+            dialogInterface.dismiss();
+            // ref.push().setValue(newcategory);
 
-                item.setName(et_addnewmenu.getText().toString());
-                ref.child(key).setValue(item);
-            }
-        });
+            item.setName(et_addnewmenu.getText().toString());
+            ref.child(key).setValue(item);
+        }
+    });
 
 
 
         alertdialog.show();
 
 
-    }
+}
 
 
     private void changeImage(final Category item) {

@@ -5,18 +5,19 @@ package com.example.diku.foodserver.Model;
  */
 
 public class FoodList {
-    String description,discount,image,menuid,name,price;
+    String description,discount,image,menuid,name,price,unit;
 
     public FoodList() {
     }
 
-    public FoodList(String description, String discount, String image, String menuid, String name, String price) {
+    public FoodList(String description, String discount, String image, String menuid, String name, String price, String unit) {
         this.description = description;
         this.discount = discount;
         this.image = image;
         this.menuid = menuid;
         this.name = name;
         this.price = price;
+        this.unit = unit;
     }
 
     public String getDescription() {
@@ -65,5 +66,13 @@ public class FoodList {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 }
