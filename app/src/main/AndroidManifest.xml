@@ -36,8 +36,12 @@
         <activity
             android:name=".Offers"
             android:label="@string/title_activity_offers"
+<<<<<<< HEAD
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".OrderDetails"></activity>
+=======
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+>>>>>>> bebd0393869c8bce7d1603ebab67d15c2e966a7e
     </application>
 
 </manifest>
