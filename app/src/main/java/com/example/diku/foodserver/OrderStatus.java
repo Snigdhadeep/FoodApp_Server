@@ -92,13 +92,8 @@ public class OrderStatus extends AppCompatActivity {
         layoutManager= new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         loadOrders();
-<<<<<<< HEAD
 
 
-=======
-        
-        
->>>>>>> bebd0393869c8bce7d1603ebab67d15c2e966a7e
 
 
 
@@ -118,18 +113,13 @@ public class OrderStatus extends AppCompatActivity {
 
         ) {
             @Override
-<<<<<<< HEAD
             protected void populateViewHolder(OrderViewHolder viewHolder, final Request model, final int position) {
-=======
-            protected void populateViewHolder(OrderViewHolder viewHolder, Request model, int position) {
->>>>>>> bebd0393869c8bce7d1603ebab67d15c2e966a7e
 
                 viewHolder.tvOrder_id.setText(adapter.getRef(position).getKey());
                 viewHolder.tvOrder_status.setText(Common.convertCodeToStatus(model.getStatus()));
                 viewHolder.tvOrder_address.setText(model.getAddress());
                 viewHolder.tvOrder_phone.setText(model.getPhone());
 
-<<<<<<< HEAD
 
                 //new views
                 viewHolder.txt_edit.setOnClickListener(new View.OnClickListener() {
@@ -156,36 +146,15 @@ public class OrderStatus extends AppCompatActivity {
 
                     }
                 });
-=======
-              /*  cart=model.getOrders();
-
-                for(Order order:cart){
-
-                    Log.i("productName",order.getProductName());
-                    Log.i("productquanti",order.getQuantity());
-
-
-
-                }*/
->>>>>>> bebd0393869c8bce7d1603ebab67d15c2e966a7e
 
 
 
 
-<<<<<<< HEAD
                 /* viewHolder.setItemclickListener(new ItemClickListener() {
                     @Override
                     public void onclick(View view, int position, boolean isLongClick) {
                     }
                 });*/
-=======
-                 viewHolder.setItemclickListener(new ItemClickListener() {
-                    @Override
-                    public void onclick(View view, int position, boolean isLongClick) {
-
-                    }
-                });
->>>>>>> bebd0393869c8bce7d1603ebab67d15c2e966a7e
 
             }
 
@@ -194,26 +163,11 @@ public class OrderStatus extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-<<<<<<< HEAD
 
 
     private void deleteOrder(String key) {
         reference.child(key).removeValue();
         adapter.notifyDataSetChanged();
-=======
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        if(item.getTitle().equals(Common.UPDATE))
-            showUpdateDialog(adapter.getRef(item.getOrder()).getKey(),adapter.getItem(item.getOrder()));
-        else if (item.getTitle().equals(Common.DELETE))
-            deleteOrder(adapter.getRef(item.getOrder()).getKey());
-
-        return super.onContextItemSelected(item);
-    }
-
-    private void deleteOrder(String key) {
-        reference.child(key).removeValue();
->>>>>>> bebd0393869c8bce7d1603ebab67d15c2e966a7e
     }
 
 
@@ -242,10 +196,7 @@ public class OrderStatus extends AppCompatActivity {
                 Log.i("status54",""+String.valueOf(statusspinner.getSelectedIndex()));
                 reference.child(localkey).setValue(item);
                 Log.i("key147",""+localkey);
-<<<<<<< HEAD
                 adapter.notifyDataSetChanged();
-=======
->>>>>>> bebd0393869c8bce7d1603ebab67d15c2e966a7e
                 currentUserphno=item.getPhone();
                 Log.i("currentUserphno",currentUserphno);
                 currentUserTotal=item.getTotal();
@@ -316,11 +267,7 @@ public class OrderStatus extends AppCompatActivity {
 
 
 
-<<<<<<< HEAD
     }
-=======
-}
->>>>>>> bebd0393869c8bce7d1603ebab67d15c2e966a7e
 
 
 
@@ -368,11 +315,7 @@ public class OrderStatus extends AppCompatActivity {
 
                     intent.putExtra(Intent.EXTRA_SUBJECT,"Shipment of items in order "+localkey2+" by e-cart");
 
-<<<<<<< HEAD
                     String name="Hi "+user.getName();
-=======
-                     String name="Hi "+user.getName();
->>>>>>> bebd0393869c8bce7d1603ebab67d15c2e966a7e
 
                     String s1="আপনার অর্ডারটি প্রেরণ করা হয়েছে। ";
 
@@ -390,11 +333,7 @@ public class OrderStatus extends AppCompatActivity {
                     String productdetails=("");
                     int total_items=0;
 
-<<<<<<< HEAD
                     for ( int num = 0; num < cartSize ; num++){
-=======
-                   for ( int num = 0; num < cartSize ; num++){
->>>>>>> bebd0393869c8bce7d1603ebab67d15c2e966a7e
                         productdetails = productdetails + "\n" + ("product:"+localproductName[num]+"\n"+"quantity-:"+localproductquantity[num]+"      "+"price:"+localproductPrice[num]+"\n");
                         total_items=total_items+Integer.parseInt(localproductquantity[num]);
                     }
@@ -430,8 +369,4 @@ public class OrderStatus extends AppCompatActivity {
     }
 
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> bebd0393869c8bce7d1603ebab67d15c2e966a7e
