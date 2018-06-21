@@ -92,8 +92,8 @@ public class OrderStatus extends AppCompatActivity {
         layoutManager= new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         loadOrders();
-        
-        
+
+
 
 
 
@@ -153,7 +153,6 @@ public class OrderStatus extends AppCompatActivity {
                 /* viewHolder.setItemclickListener(new ItemClickListener() {
                     @Override
                     public void onclick(View view, int position, boolean isLongClick) {
-
                     }
                 });*/
 
@@ -268,7 +267,7 @@ public class OrderStatus extends AppCompatActivity {
 
 
 
-}
+    }
 
 
 
@@ -316,7 +315,7 @@ public class OrderStatus extends AppCompatActivity {
 
                     intent.putExtra(Intent.EXTRA_SUBJECT,"Shipment of items in order "+localkey2+" by e-cart");
 
-                     String name="Hi "+user.getName();
+                    String name="Hi "+user.getName();
 
                     String s1="আপনার অর্ডারটি প্রেরণ করা হয়েছে। ";
 
@@ -334,7 +333,7 @@ public class OrderStatus extends AppCompatActivity {
                     String productdetails=("");
                     int total_items=0;
 
-                   for ( int num = 0; num < cartSize ; num++){
+                    for ( int num = 0; num < cartSize ; num++){
                         productdetails = productdetails + "\n" + ("product:"+localproductName[num]+"\n"+"quantity-:"+localproductquantity[num]+"      "+"price:"+localproductPrice[num]+"\n");
                         total_items=total_items+Integer.parseInt(localproductquantity[num]);
                     }

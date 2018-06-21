@@ -28,7 +28,7 @@ public class OrderViewHolder extends RecyclerView.ViewHolder  {
         txt_direction=(TextView)itemView.findViewById(R.id.txt_direction);
 
 
-          }
+    }
 
 
 }
